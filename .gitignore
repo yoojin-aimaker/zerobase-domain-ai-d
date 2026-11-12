@@ -1,3 +1,4 @@
 준비상태.md
 .DS_Store
 .openai/*.tar*
+__pycache__/

@@ -40,27 +40,27 @@
         },
         {
           "number": "1-8",
-          "label": "어떤 역량을 준비해야 하나요?",
+          "label": "세 직무에서 보여줄 판단은 다릅니다",
           "href": "week1_deck.html#slide-8"
         },
         {
           "number": "참고1",
-          "label": "참고 / 영업, 데이터, 기획",
+          "label": "MD / 상품기획 / 근거에서 첫 과제로",
           "href": "week1_deck.html#slide-9"
         },
         {
           "number": "참고2",
-          "label": "참고 / 마케팅, HR, 디자인",
+          "label": "제품디자인 / 근거에서 첫 과제로",
           "href": "week1_deck.html#slide-10"
         },
         {
           "number": "참고3",
-          "label": "참고 / 개발, 회계, AX",
+          "label": "HR / 경영지원 / 근거에서 첫 과제로",
           "href": "week1_deck.html#slide-11"
         },
         {
           "number": "참고4",
-          "label": "참고 / SCM, 생산관리, 시공관리",
+          "label": "같은 프로젝트를 4주 동안 발전시킵니다",
           "href": "week1_deck.html#slide-12"
         },
         {
@@ -95,17 +95,17 @@
         },
         {
           "number": "2-4",
-          "label": "JD 원문에서 무엇을 읽죠?",
+          "label": "내 직무의 업무 문장에서 과제를 찾습니다",
           "href": "week1_deck.html#slide-18"
         },
         {
           "number": "2-5",
-          "label": "내 직무의 결정 찾기",
+          "label": "직무가 내릴 결정에서 결과물을 고릅니다",
           "href": "week1_deck.html#slide-19"
         },
         {
           "number": "2-6",
-          "label": "5분 실습 / JD 역추출",
+          "label": "5분 실습 / 근거와 내 과제 세 줄",
           "href": "week1_deck.html#slide-20"
         },
         {
@@ -145,7 +145,7 @@
         },
         {
           "number": "3-5",
-          "label": "서비스 기획 / PO로 질문하기",
+          "label": "사례의 사고과정을 내 직무로 바꿔봅니다",
           "href": "week1_deck.html#slide-27"
         },
         {
@@ -190,12 +190,12 @@
         },
         {
           "number": "4-5",
-          "label": "왜 AI를 선택했나",
+          "label": "내 과제에서 AI와 규칙을 어떻게 나누나요?",
           "href": "week1_deck.html#slide-35"
         },
         {
           "number": "4-6",
-          "label": "AI 적용 방식 선택",
+          "label": "처음에는 대화형 AI로 기준부터 정합니다",
           "href": "week1_deck.html#slide-36"
         },
         {
@@ -210,7 +210,7 @@
       "items": [
         {
           "number": "4-8",
-          "label": "검수와 중단 조건",
+          "label": "정상과 예외에서 무엇을 확인할까요?",
           "href": "week1_deck.html#slide-38"
         },
         {
@@ -230,7 +230,7 @@
         },
         {
           "number": "4-12",
-          "label": "프롬프트 기법 / 구조화하기",
+          "label": "목표와 자료, 출력 조건을 구분합니다",
           "href": "week1_deck.html#slide-42"
         },
         {
@@ -255,7 +255,7 @@
         },
         {
           "number": "5-2",
-          "label": "사실과 가설 구분",
+          "label": "확인한 근거와 아직 모르는 것을 나눕니다",
           "href": "week1_deck.html#slide-46"
         },
         {
@@ -270,7 +270,7 @@
         },
         {
           "number": "5-5",
-          "label": "문제 범위 줄이기",
+          "label": "이번 주는 첫 범위와 제외할 일을 정합니다",
           "href": "week1_deck.html#slide-49"
         },
         {
@@ -285,42 +285,42 @@
       "items": [
         {
           "number": "6-1",
-          "label": "이번 주 숙제 한눈에",
+          "label": "수업에서 초안, 숙제에서 같은 내용을 보완",
           "href": "week1_deck.html#slide-51"
         },
         {
           "number": "6-2",
-          "label": "5분 메모 / 코치에게 가져갈 것",
+          "label": "5분 메모 / 내 직무의 문제와 첫 범위",
           "href": "week1_deck.html#slide-52"
         },
         {
           "number": "6-3",
-          "label": "첫 MD / 내 프로젝트에 넣기",
+          "label": "최신 지침을 읽히고 새 대화에서 시작합니다",
           "href": "week1_deck.html#slide-53"
         },
         {
           "number": "6-4",
-          "label": "코치와 함께 질문하고 답하기",
+          "label": "코치에게 세 질문을 받고 내 말로 답합니다",
           "href": "week1_deck.html#slide-54"
         },
         {
           "number": "6-5",
-          "label": "내 지침서 MD 작성",
+          "label": "내 답을 지침서로 만들고 직접 고칩니다",
           "href": "week1_deck.html#slide-55"
         },
         {
           "number": "6-6",
-          "label": "선택 / 작은 입력 시험",
+          "label": "선택 / 정상 한 건과 예외 한 건 시험",
           "href": "week1_deck.html#slide-56"
         },
         {
           "number": "6-7",
-          "label": "MD → PDF 또는 HTML",
+          "label": "같은 MD를 HTML이나 PDF로 제출합니다",
           "href": "week1_deck.html#slide-57"
         },
         {
           "number": "6-8",
-          "label": "두 파일 확인과 제출",
+          "label": "이번 주 완료와 다음 주 준비를 확인합니다",
           "href": "week1_deck.html#slide-58"
         },
         {
@@ -330,7 +330,7 @@
         },
         {
           "number": "6-10",
-          "label": "막히는 지점 Q&A",
+          "label": "세 직무의 첫 질문을 한 문장으로 남깁니다",
           "href": "week1_deck.html#slide-60"
         }
       ]
