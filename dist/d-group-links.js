@@ -1,0 +1,13 @@
+(() => {
+ const nested=location.pathname.includes('/week3/');const prefix=nested?'../':'';
+ const bar=document.querySelector('.top-actions')||document.querySelector('header');
+ if(bar){const b=document.createElement('button');b.textContent='D그룹 맞춤 실습';b.onclick=()=>location.href=prefix+'d-group.html#homework';bar.append(b);}
+ document.querySelectorAll('a').forEach(a=>{if((a.getAttribute('aria-label')||'').includes('출석 체크')||a.textContent.includes('출석 체크 구글폼')){a.replaceChildren(document.createTextNode('D그룹 제출 안내'));a.href=prefix+'submission.html';a.setAttribute('aria-label','D그룹 제출 안내');} });
+ if(!location.pathname.endsWith('week1_deck.html'))return;
+ const slides=[...document.querySelectorAll('article.slide')];
+ const rows=[['md','MD / 상품기획','리뷰 → 상품 개선 제안','리뷰 ID와 원문을 남기고 불편을 분류합니다.'],['product','제품디자인','사용 불편 → 설계 대안','불편 근거에서 요구사항을 정하고 대안 2개를 비교합니다.'],['hr','HR / 경영지원','가상 일정 → 온보딩 점검','일정과 안내문을 대조하고 누락 후보를 확인합니다.']];
+ function replace(n,title,render){const s=slides[n-1];if(!s)return;s.querySelector('h3').textContent=title;s.querySelector('.ppt-body').innerHTML=render;s.dataset.title=title;document.querySelectorAll('.slide-link').forEach(a=>{if(a.getAttribute('href')==='#slide-'+n)a.textContent=n+' / '+title;});}
+ const cards=rows.map((r,i)=>`<a class="role-match-card" href="d-group.html#${r[0]}"><div><span>GROUP D / 0${i+1}</span><h4>${r[1]}</h4><p>${r[2]}</p></div><b>↗</b></a>`).join('');
+ replace(21,'내 직무에서 어떤 문제를 고를까요?',`<div class="role-match-intro"><span>D그룹 맞춤 제안</span><b>MD, 제품디자인, HR의 업무 장면에서 시작합니다</b></div><div class="role-match-grid">${cards}<a class="role-match-card" href="d-group.html#homework"><div><span>COMMON</span><h4>공통 선택 기준</h4><p>근거 확보 → 작은 실행 → 사람 검수</p></div><b>↗</b></a></div><p class="role-match-note">개인 주제는 첫 회차에 원자료와 관심 직무를 확인한 뒤 확정합니다.</p>`);
+ replace(22,'같은 AI, 서로 다른 판단 기준',`<div class="role-match-intro"><span>무엇을 직접 판단하나요?</span><b>AI 초안과 내가 결정한 부분을 나눠 기록합니다</b></div><div class="role-match-grid">${rows.map(r=>`<a class="role-match-card" href="d-group.html#${r[0]}"><div><span>${r[1]}</span><h4>${r[2]}</h4><p>${r[3]}</p></div><b>↗</b></a>`).join('')}<a class="role-match-card" href="d-group.html#homework"><div><span>CHECK</span><h4>근거가 없으면 보류</h4><p>효능, 성능, 회사 제도를 임의로 만들지 않습니다.</p></div><b>↗</b></a></div><p class="role-match-note">공통 숙제: AI 작업 지침서 MD + 같은 내용의 HTML 또는 PDF.</p>`);
+})();

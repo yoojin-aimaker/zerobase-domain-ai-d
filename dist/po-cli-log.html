@@ -1,0 +1,12 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>서비스 기획 / PO 실제 Codex CLI 출력 기록</title><style>*{box-sizing:border-box}body{margin:0;background:#11131a;color:#ececf2;font-family:Menlo,Consolas,monospace}main{width:1120px;padding:26px 34px}header{border-bottom:1px solid #494052;padding-bottom:16px;margin-bottom:18px;font-size:20px;color:#d8bcff}header small{display:block;font-size:15px;line-height:1.5;color:#b5adbf;margin-top:8px}.command{color:#c3b5d6;font-size:14px;line-height:1.5;margin:0 0 16px;white-space:pre-wrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:19px;line-height:1.55;margin:0}footer{margin-top:18px;padding-top:12px;border-top:1px solid #494052;font-size:14px;color:#b5adbf}</style><main><header>서비스 기획 / PO → Codex CLI<small>실제 실행 응답 원문 / gpt-6-sol / 2026.10.07 / 종료 코드 0</small></header><p class="command">$ codex exec --model gpt-6-sol --sandbox read-only -o response.txt - &lt; prompt.txt
+(실행 시 --ignore-user-config, --ephemeral, --skip-git-repo-check, --color never 사용)</p><pre>1) **어떤 제약이 선택을 바꾸나?**  
+확인된 사례: 검수량은 많고 새 모델의 학습 데이터는 부족했으며 정책은 자주 바뀌어, GPT와 정책 프롬프트를 선택했다. 설계 가설: VOC의 분류 기준이 자주 바뀌고 검증된 사례가 적다면, 우선순위를 자동 결정하기보다 기준을 적어 개선 후보를 추린다.
+
+2) **무엇을 틀릴 수 있나?**  
+확인된 사례: 정책별 오검수와 프롬프트 변경 이력을 확인하고, 좌표 판단은 별도 모델로 분기했다. 설계 가설: 같은 불만을 중복 집계하거나 언급 횟수만으로 중요도를 판단할 수 있으니, 후보마다 VOC 원문과 중복 여부를 확인한다.
+
+3) **누가 이어서 확인하나?**  
+확인된 사례: 권리 관련 정책은 운영자 검수로 넘겼다. 설계 가설: PO가 후보와 근거를 정리하고, 우선순위 회의 참석자가 다음 스프린트에 다룰 항목을 결정한다.
+
+이번 주 작은 과제: VOC에서 개선 후보 몇 개를 골라 원문, 분류 이유, 확인이 필요한 점을 한 장에 적는다.  
+판단 기준: 회의 참석자가 각 후보의 근거와 미확인 사항을 보고 우선순위를 논의할 수 있는가.</pre><footer>실제 CLI 출력 파일을 웹에서 표시한 로그 화면입니다. 터미널 앱 자체의 UI 캡처는 아닙니다.<br>적용 장면: VOC 개선 후보와 우선순위 회의 / 수업용 가상 장면. 실제 서비스 데이터와 성과 미제공.</footer></main></html>

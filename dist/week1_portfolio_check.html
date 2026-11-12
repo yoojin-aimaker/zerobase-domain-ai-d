@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 프로젝트 포트폴리오 점검</title>
+<style>
+:root{--ink:#1f2340;--muted:#69708c;--line:#e8eaf2;--purple:#6956d8;--lav:#f4f1ff;--mint:#eaf8f2;--peach:#fff3e7;--bg:#fbfbfe}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Pretendard","Apple SD Gothic Neo",sans-serif;line-height:1.65}main{max-width:1080px;margin:0 auto;padding:56px 28px 80px}.eyebrow{color:var(--purple);font-weight:800;letter-spacing:.08em;font-size:13px;text-transform:uppercase}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end;margin-bottom:36px}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.12;letter-spacing:-.055em;margin:12px 0 16px}.hero p{font-size:18px;color:var(--muted);margin:0;max-width:680px}.stamp{background:var(--ink);color:white;border-radius:24px;padding:25px;box-shadow:0 18px 40px #30365a1c}.stamp b{display:block;font-size:20px;margin-bottom:8px}.stamp span{color:#d9ddf4;font-size:14px}.section{margin-top:46px}.section h2{font-size:28px;letter-spacing:-.04em;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 26px #30365a0b}.card h3{font-size:18px;margin:0 0 8px}.card p{margin:0;color:var(--muted);font-size:15px}.card.lav{background:var(--lav)}.card.mint{background:var(--mint)}.card.peach{background:var(--peach)}.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}.compare>div{border-radius:18px;padding:22px}.bad{background:#fff0f0;border:1px solid #ffd7d7}.good{background:#edf8f1;border:1px solid #c9ebd8}.label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.bad .label{color:#bb4c5a}.good .label{color:#228453}.quote{font-size:17px;font-weight:700;line-height:1.55;margin:10px 0 0}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check div{background:white;border:1px solid var(--line);border-radius:14px;padding:15px 17px}.check b{display:block;font-size:15px}.check span{display:block;color:var(--muted);font-size:14px;margin-top:4px}.prompt{background:var(--ink);color:white;border-radius:22px;padding:26px;margin-top:20px}.prompt h3{margin:0 0 10px;font-size:20px}.prompt pre{white-space:pre-wrap;margin:0;color:#eef0ff;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}.foot{margin-top:48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px}@media(max-width:760px){main{padding:36px 18px 60px}.hero,.compare{grid-template-columns:1fr}.grid,.check{grid-template-columns:1fr}.hero h1{font-size:40px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">AI Side Program 3기 / 취업 포트폴리오 보강</div>
+<div class="hero">
+  <div><h1>AI를 썼다는 말보다<br>판단을 보여주세요</h1><p>기업은 결과 화면만 보지 않습니다. 어떤 업무 문제를 골랐고, 왜 AI를 적용했고, 무엇을 확인한 뒤 어떻게 바꿨는지를 읽습니다.</p></div>
+  <div class="stamp"><b>수강생용 한 문장</b><span>문제 → AI 적용 판단 → 작은 실행 → 검증과 수정 → 직무에서 보여줄 증거</span></div>
+</div>
+
+<section class="section"><h2>기업이 좋게 읽는 AI 활용</h2><div class="grid">
+  <article class="card lav"><h3>업무에서 출발</h3><p>채용공고의 실제 업무나 사용자의 불편을 고르고, 누가 언제 겪는지 구체적으로 설명합니다.</p></article>
+  <article class="card mint"><h3>적용 이유가 있음</h3><p>규칙, 검색, 기존 FAQ, 사람 판단과 비교해 다양한 입력을 해석해야 하는 이유를 보여줍니다.</p></article>
+  <article class="card peach"><h3>검증과 책임이 있음</h3><p>오답과 예외, 출처, 사람 검수, 중단 조건을 정하고 기대 효과와 측정 결과를 구분합니다.</p></article>
+</div></section>
+
+<section class="section"><h2>포트폴리오에서 자주 생기는 문제</h2><div class="compare">
+  <div class="bad"><div class="label">그대로 쓰면 약한 표현</div><p class="quote">“바이브 코딩으로 AI 상담 챗봇을 만들었습니다. 시스템 구조도도 설계했습니다.”</p></div>
+  <div class="good"><div class="label">판단이 보이는 표현</div><p class="quote">“반복 문의가 특정 유형에 집중되는지 확인하고 상담 대기를 줄일 POC를 설계했습니다. FAQ와 AI 응답을 비교하고 오답을 분석해 사용자 유형과 응답 기준을 수정했습니다.”</p></div>
+</div></section>
+
+<section class="section"><h2>POC와 구조도는 이렇게 씁니다</h2><div class="grid">
+  <article class="card"><h3>POC</h3><p>핵심 가설이 가능한지 시험한 작은 구현입니다. 무엇을 비교했고 어떤 결과가 나왔는지 붙입니다.</p></article>
+  <article class="card"><h3>구조도</h3><p>AI 처리, 사람 검수, 보류 단계를 왜 나눴는지 설명하는 설계 판단의 증거입니다.</p></article>
+  <article class="card"><h3>성과 문장</h3><p>측정 전에는 목표나 검증 계획으로 씁니다. 시간 절감, 매출, 정확도 수치를 만들어내지 않습니다.</p></article>
+</div></section>
+
+<section class="section"><h2>제출 전에 여섯 가지를 확인하세요</h2><div class="check">
+  <div><b>문제와 사용자</b><span>누가 어떤 업무 장면에서 불편한가?</span></div>
+  <div><b>AI 선택</b><span>기존 방식보다 AI가 맞는 이유가 있는가?</span></div>
+  <div><b>내 판단</b><span>AI가 한 일과 내가 결정한 일이 나뉘는가?</span></div>
+  <div><b>검수 설계</b><span>오답, 예외, 출처, 사람 승인 지점이 있는가?</span></div>
+  <div><b>검증 기준</b><span>무엇을 비교하고 어떤 자료로 확인하는가?</span></div>
+  <div><b>직무 연결</b><span>지원 직무의 업무와 보여줄 증거가 이어지는가?</span></div>
+</div></section>
+
+<section class="section"><h2>Claude에 이렇게 점검을 맡겨보세요</h2><div class="prompt"><h3>복사해서 사용</h3><pre>아래 AI 프로젝트를 채용 담당자와 현업 실무자가 읽는다고 가정하고 점검해줘.
+문제와 업무 장면, AI를 고른 이유, 내가 판단한 일, 오답과 사람 검수, 기대 효과와 측정 결과, 지원 직무의 증거를 표로 정리해줘.
+측정하지 않은 수치나 성과는 만들지 말고 확인 전 내용은 가정 또는 계획으로 표시해줘.
+기술 스택을 더 붙이는 조언보다 문제, 판단, 검증을 선명하게 만드는 수정부터 제안해줘.</pre></div></section>
+
+<div class="foot">이 자료는 1주차 브리프 제출 전 점검용입니다. 실제 데이터와 가상 샘플을 구분하고, 공개해도 되는 자료만 사용하세요. 본인의 경험과 다른 문장은 반드시 고쳐서 제출합니다.</div>
+</main>
+</body>
+</html>

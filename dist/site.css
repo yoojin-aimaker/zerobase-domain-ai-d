@@ -1,0 +1,54 @@
+:root{--ink:#202225;--muted:#62656d;--paper:#f1f0ed;--purple:#6444c5;--pale:#f0ebff;--mint:#eaf7f0;--peach:#fff2e6;--line:#dad9d6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;line-height:1.65}a{color:var(--purple);text-underline-offset:4px}.top{max-width:1180px;margin:auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}.brand{font-weight:850;letter-spacing:.06em;font-size:13px}.brand span{color:var(--purple)}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{background:#fff;color:var(--ink);border:1px solid var(--line);padding:8px 12px;border-radius:7px;text-decoration:none;font-size:13px}.nav a.active,.nav a:hover{background:var(--purple);border-color:var(--purple);color:#fff}.page{max-width:1180px;margin:auto;padding:56px 28px 84px}.eyebrow{color:var(--purple);font-size:12px;font-weight:800;letter-spacing:.12em}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:end}.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.12;letter-spacing:-.055em;margin:12px 0 20px}.hero p{font-size:20px;color:var(--muted);max-width:700px}.badge{background:var(--ink);color:#fff;border-radius:22px;padding:26px;box-shadow:0 18px 40px #30365a1c}.badge b{display:block;font-size:20px}.badge span{display:block;color:#d8dcf1;margin-top:8px}.section{margin-top:52px}.section h2{font-size:30px;letter-spacing:-.045em;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 26px #30365a0b}.card.lav{background:var(--pale)}.card.mint{background:var(--mint)}.card.peach{background:var(--peach)}.card h3{margin:0 0 7px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.flow div{padding:17px;background:#fff;border-top:3px solid var(--purple)}.flow b{display:block}.flow span{font-size:14px;color:var(--muted)}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 17px}.check b{display:block}.check span{display:block;color:var(--muted);font-size:14px;margin-top:4px}.quote{background:var(--pale);border-left:4px solid var(--purple);padding:20px 24px;font-size:22px;font-weight:700}.callout{padding:20px 24px;background:var(--ink);color:#fff;border-radius:16px;margin-top:16px}.footer{max-width:1180px;margin:auto;padding:0 28px 26px;color:var(--muted);font-size:13px}@media(max-width:760px){.top{align-items:flex-start;flex-direction:column}.page{padding:38px 18px 62px}.hero{grid-template-columns:1fr}.grid,.flow,.check{grid-template-columns:1fr}.hero h1{font-size:44px}}
+@import url("brand.css");
+ .brand span{font-size:0}.brand span::after{content:"YUJIN FLOW";font-size:13px;color:var(--purple)}
+ .brand span{font-size:13px}.brand span::after{content:""}
+/* YUJIN FLOW home blocks */
+.grid .card,.section > .card{display:block;position:relative;min-height:154px;text-decoration:none;color:var(--ink);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.grid .card:hover,.section > .card:hover{transform:translateY(-4px);border-color:var(--purple);box-shadow:0 16px 34px #30365a22}
+.grid .card::after,.section > .card::after{content:"↗";position:absolute;right:20px;bottom:16px;color:var(--purple);font-size:22px;font-weight:800}
+.grid .card h3,.section > .card h3{padding-right:28px}
+.section:nth-of-type(2) > .card{min-height:112px;border-radius:16px}
+.section:nth-of-type(2) > .card h3{font-size:20px}
+@media(max-width:760px){.grid .card,.section > .card{min-height:132px}}
+.lock-label{display:inline-block;margin-left:8px;color:var(--purple);font-size:11px;letter-spacing:0;font-weight:800}.locked-card{background:#e9e8e5!important;color:#686a70!important}.locked-card p{color:#777a80}.locked-card::after{content:"🔒"!important;font-size:16px}
+/* YUJIN FLOW dark home */
+:root{--ink:#f7f5f1;--muted:#b4b0bc;--paper:#202225;--purple:#c09aff;--pale:#302944;--mint:#24352f;--peach:#3b2f28;--line:#44434b}
+body{background:var(--paper);color:var(--ink)}.top{border-bottom-color:var(--line)}.nav a{background:#2b2b30;color:var(--ink);border-color:#4a4852}.nav a.active,.nav a:hover{background:var(--purple);border-color:var(--purple);color:#202225}.hero h1{color:#fff}.hero p{color:var(--muted)}.badge{background:#151619;border:1px solid #4b4658}.badge span{color:#d7d1df}.flow div,.card,.check div{background:#2b2b30;border-color:var(--line);color:var(--ink)}.card p,.flow span,.check span{color:var(--muted)}.grid .card:hover,.section > .card:hover{border-color:var(--purple);box-shadow:0 16px 34px #0008}.callout{background:#151619;border:1px solid #4b4658}.footer{color:var(--muted)}.locked-card{background:#2a292d!important;color:#aaa6b2!important}.locked-card p{color:#8f8a98}.lav{background:#302944!important}.mint{background:#24352f!important}.peach{background:#3b2f28!important}
+/* 주차 카드 네 개의 크기와 내부 배치를 통일합니다. */
+.week-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.week-grid .week-card{display:grid;grid-template-rows:60px 28px 1fr;gap:12px;min-height:228px;padding:24px 28px 42px;position:relative;text-decoration:none;color:var(--ink)}
+.week-card h3{font-size:20px;line-height:1.4;margin:0;padding-right:18px}
+.week-status{color:var(--purple);font-size:12px;font-weight:800;align-self:start}
+.week-card p{font-size:15px;line-height:1.65;margin:0;padding-right:24px}
+.week-card::after{content:'↗';position:absolute;right:24px;bottom:18px;color:var(--purple);font-size:22px}
+@media(max-width:760px){.week-grid{grid-template-columns:1fr}.week-grid .week-card{min-height:228px}}
+/* 제목의 단어가 끊기지 않도록 소개 영역을 재배치합니다. */
+.hero{grid-template-columns:1fr;gap:22px;align-items:start}
+.hero h1{font-size:clamp(30px,4.2vw,48px);line-height:1.3;letter-spacing:-.035em;word-break:keep-all;overflow-wrap:normal;max-width:1000px;margin:12px 0 20px}
+.hero-line{display:inline-block}
+.hero p{max-width:880px;font-size:17px;line-height:1.8;word-break:keep-all;margin:0}
+.hero .badge{max-width:880px;width:100%;padding:18px 22px;border-radius:14px}
+.hero .badge b{font-size:16px}.hero .badge span{font-size:15px;margin-top:4px}
+@media(max-width:760px){.hero h1{font-size:32px}.hero p{font-size:16px}.hero-line{display:block}}
+/* 밝은 바탕과 명확한 카드 대비 */
+:root{--ink:#24232b;--muted:#65616f;--paper:#f5f3f8;--purple:#7044bd;--pale:#eee7fa;--mint:#e8f2ec;--peach:#fbede3;--line:#ded9e5}
+body{background:var(--paper);color:var(--ink)}
+.top{border-bottom-color:var(--line)}
+.nav a{background:white;border-color:#d9d2e3;color:var(--ink)}
+.nav a.active,.nav a:hover{background:var(--purple);border-color:var(--purple);color:white}
+.hero{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+.hero h1{color:#24232b}.hero p{color:var(--muted)}
+.hero .badge{background:#eee7fa;border-color:#dfd0f3;color:var(--ink)}
+.hero .badge span{color:#615073}
+.card,.check div,.flow div{background:#fff;border-color:var(--line);color:var(--ink)}
+.card p,.check span,.flow span{color:var(--muted)}
+.lav{background:#eee7fa!important}.mint{background:#e8f2ec!important}.peach{background:#fbede3!important}
+.locked-card{background:#eeedf1!important;color:#65606e!important}.locked-card p{color:#726b7c}
+.week-status{color:#7044bd}
+.grid .card:hover,.section>.card:hover{border-color:var(--purple);box-shadow:0 12px 28px #60437b18}
+.callout{background:#eee7fa;border-color:#dfd0f3;color:#3a2a50}
+.footer{color:#706a7a}
+@media(max-width:760px){.hero{padding:24px 20px}}
+.submission-grid{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:760px){.submission-grid{grid-template-columns:1fr}}
+
+a.brand{color:inherit;text-decoration:none}a.brand:focus-visible{outline:2px solid var(--ds-accent);outline-offset:5px}

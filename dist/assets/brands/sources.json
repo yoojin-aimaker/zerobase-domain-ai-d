@@ -1,0 +1,18 @@
+{
+  "claude": {
+    "source": "https://claude.com/",
+    "asset": "Official orange symbol from the site wordmark, original path and fill."
+  },
+  "gemini": {
+    "source": "https://gemini.google.com/",
+    "asset": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png"
+  },
+  "chatgpt": {
+    "source": "OpenAI ChatGPT desktop app resources",
+    "asset": "chatgptTemplate@2x.png"
+  },
+  "codex": {
+    "source": "OpenAI ChatGPT desktop app resources",
+    "asset": "icon-codex-light.png"
+  }
+}

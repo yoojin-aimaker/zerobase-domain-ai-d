@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수정안 검토 화면 (시연)</title>
+<style>
+  :root{
+    --purple:#6d28d9;
+    --purple-dark:#4c1d95;
+    --purple-light:#f3e8ff;
+    --white:#ffffff;
+    --text:#241a33;
+    --line:#e3d6fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--text);
+    font-family:-apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size:19px;
+    line-height:1.7;
+  }
+  .notice{
+    background:var(--purple-dark);
+    color:var(--white);
+    padding:18px 24px;
+    font-size:16px;
+  }
+  .notice p{margin:4px 0;}
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:28px 20px 60px;
+  }
+  h1{
+    font-size:28px;
+    color:var(--purple-dark);
+    margin:0 0 6px;
+  }
+  .purpose{
+    font-size:17px;
+    color:#4a3a66;
+    margin-bottom:24px;
+  }
+  .steps{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:24px;
+  }
+  .step-btn{
+    flex:1;
+    min-width:140px;
+    background:var(--purple-light);
+    border:2px solid var(--purple);
+    color:var(--purple-dark);
+    padding:14px 10px;
+    font-size:17px;
+    font-weight:600;
+    border-radius:10px;
+    cursor:pointer;
+  }
+  .step-btn.active{
+    background:var(--purple);
+    color:var(--white);
+  }
+  .panel{
+    display:none;
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:24px;
+    margin-bottom:24px;
+  }
+  .panel.active{display:block;}
+  .panel h2{
+    font-size:22px;
+    color:var(--purple-dark);
+    margin-top:0;
+  }
+  .topic-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:20px;
+    padding:14px;
+    background:var(--purple-light);
+    border-radius:10px;
+  }
+  .badge{
+    display:inline-block;
+    margin-top:14px;
+    padding:8px 16px;
+    background:#fff3cd;
+    color:#7a5b00;
+    border:2px solid #e8c868;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:600;
+  }
+  .hint{
+    font-size:15px;
+    color:#6b6076;
+    margin-top:14px;
+  }
+  .quote{
+    background:var(--purple-light);
+    border-left:5px solid var(--purple);
+    padding:14px 16px;
+    margin:12px 0;
+    font-size:18px;
+  }
+  dl{
+    margin:0;
+  }
+  dt{
+    font-weight:700;
+    color:var(--purple-dark);
+    margin-top:14px;
+  }
+  dd{
+    margin:4px 0 0;
+  }
+  ul.confirm-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  ul.confirm-list li{
+    padding:12px 14px;
+    border:2px dashed #c9b6ec;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:17px;
+  }
+  .tag{
+    display:inline-block;
+    font-size:14px;
+    font-weight:700;
+    color:var(--purple-dark);
+    background:var(--purple-light);
+    border:1px solid var(--purple);
+    border-radius:6px;
+    padding:2px 8px;
+    margin-left:6px;
+  }
+  footer{
+    border-top:3px solid var(--line);
+    margin-top:10px;
+    padding-top:20px;
+  }
+  footer h3{
+    font-size:18px;
+    color:var(--purple-dark);
+    margin-bottom:8px;
+  }
+  footer ul{
+    margin:0 0 20px;
+    padding-left:22px;
+    font-size:16px;
+  }
+  footer ul.no li{color:#8a2626;}
+  footer ul.yes li{color:#1f6b3a;}
+</style>
+</head>
+<body><p style="margin:12px 24px;font-size:14px;color:#63596d">설명용 합성 사례 / 실제 AGENT 호출과 결과는 Code 웹 실습에서 확인합니다.</p>
+
+<div class="notice">
+  <p>[강의 시연] 이 화면은 강의용 가상 자료를 기반으로 한 시연입니다. 실제 고객 정보가 아닙니다.</p>
+  <p>[기존 실행 결과 조회 화면] 이미 실행된 AI 처리 결과를 보여주는 화면이며, 실시간 AI 연결은 포함되어 있지 않습니다.</p>
+</div>
+
+<div class="wrap">
+  <h1>워크플로우 수정안 검토</h1>
+  <p class="purpose">직무 / 목적: 멘토가 멘토 피드백 근거를 확인하면서 워크플로우 수정안를 검토하는 화면입니다.</p>
+
+  <nav class="steps">
+    <button class="step-btn active" data-step="1">1. 주제 선택</button>
+    <button class="step-btn" data-step="2">2. 원문과 분류 근거 확인</button>
+    <button class="step-btn" data-step="3">3. 추가 확인 사항</button>
+  </nav>
+
+  <section class="panel active" id="panel-1">
+    <h2>1. 주제 선택</h2>
+    <div class="topic-row">
+      <input type="radio" name="topic" checked disabled>
+      <span>입력 누락 시 확인 요청하기</span>
+    </div>
+    <span class="badge">상태: 사람 검토 대기</span>
+    <p class="hint">이 주제는 가상 멘토 피드백 1건을 입력으로 멘토링 피드백의 수정안 구성 예시입니다. 이 화면에서는 선택 상태만 보여주며, 승인이나 저장 기능은 구현되어 있지 않습니다.</p>
+  </section>
+
+  <section class="panel" id="panel-2">
+    <h2>2. 원문과 분류 근거 확인</h2>
+    <dl>
+      <dt>멘토 피드백 원문</dt>
+      <dd class="quote">"입력 자료가 없을 때 먼저 요청하고 멈추는 조건을 추가해주세요."</dd>
+      <dt>유형 후보 (분류 담당 AI 결과)</dt>
+      <dd>워크플로우 개선</dd>
+      <dt>원문 근거</dt>
+      <dd class="quote">"입력 자료가 없을 때 먼저 요청하고 멈추는 조건을 추가해주세요."</dd>
+      <dt>전체 보류 여부</dt>
+      <dd>아니오</dd>
+      <dt>제안 주제 (수정안 초안 담당 AI 결과)</dt>
+      <dd>입력 누락 시 확인 요청하기</dd>
+      <dt>주제 제안 시 사람에게 확인할 질문</dt>
+      <dd>없음 (수정안 초안 담당 AI 판단)</dd>
+    </dl>
+  </section>
+
+  <section class="panel" id="panel-3">
+    <h2>3. 추가 확인 사항</h2>
+    <ul class="confirm-list">
+      <li>해당 업무의 판단 기준 <span class="tag">추가 확인</span></li>
+      <li>실제 처리 시간 <span class="tag">추가 확인</span></li>
+      <li>이 주제와 관련된 고객 성과 수치 <span class="tag">추가 확인</span></li>
+      <li>자료(원문 또는 분류 기준) 누락 시 멈추는 동작은 이번 시연에서 실제로 입력해 보지 않았습니다 <span class="tag">추가 확인</span></li>
+      <li>유형 후보가 전부 보류일 때 확인 질문을 만드는 동작은 이번 피드백이 보류가 아니라서 실제로 발생하지 않았습니다 <span class="tag">추가 확인</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <h3>구현된 동작</h3>
+    <ul class="yes">
+      <li>3단계 화면 전환 (주제 선택 / 원문과 근거 확인 / 추가 확인 사항)</li>
+      <li>실제 분류, 수정안 초안 결과와 원문 근거 표시</li>
+      <li>추가 확인이 필요한 항목 표시</li>
+    </ul>
+    <h3>구현되지 않은 기능</h3>
+    <ul class="no">
+      <li>주제 승인 또는 반려 저장 (새로고침하면 초기화됩니다)</li>
+      <li>다른 피드백 추가 또는 업로드</li>
+      <li>실시간 AI 재분류 또는 재호출</li>
+      <li>담당자 알림 발송</li>
+      <li>실제 업무 시스템과 원본 자료 연동</li>
+    </ul>
+  </footer>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll(".step-btn");
+  var panels = document.querySelectorAll(".panel");
+  buttons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var step = btn.getAttribute("data-step");
+      buttons.forEach(function(b){ b.classList.remove("active"); });
+      panels.forEach(function(p){ p.classList.remove("active"); });
+      btn.classList.add("active");
+      document.getElementById("panel-" + step).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>

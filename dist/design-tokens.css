@@ -1,0 +1,17 @@
+/* Original lecture palette. Change only on an explicit design request. */
+:root {
+  --ds-white: #ffffff;
+  --ds-canvas: #e9e7ed;
+  --ds-surface: #faf9fc;
+  --ds-ink: #25212d;
+  --ds-body: #63596d;
+  --ds-muted: #736c7e;
+  --ds-line: #e1dde7;
+  --ds-line-strong: #bea3d5;
+  --ds-accent: #7048b5;
+  --ds-accent-hover: #512790;
+  --ds-selected: #ede5f8;
+  --ds-inverse: #ffffff;
+  --ds-inverse-muted: #d7baff;
+  --ds-shadow: 0 10px 35px #30233814;
+}
