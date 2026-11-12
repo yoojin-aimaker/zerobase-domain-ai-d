@@ -210,6 +210,9 @@ def lessons(rid,k,a,f):
  for num,x in [(9,'md'),(10,'product'),(11,'hr')]:
   q=R[x];v=DETAIL[x]
   out[f'slide-{num}']=(q['name']+' / 근거에서 첫 과제로',table(['시작점','수업용 예시','내가 확인할 것'],[('근거',v['fact'],'실제와 합성, 사실과 가설'),('첫 범위',v['first'],q['decision']),('검수 계획',v['n']+' / '+v['x'],v['exception'])],'기업의 공식 과제가 아닙니다. '+('온보딩은 관심 업무 확인 전 제안입니다.' if x=='hr' else '실제 공고와 자료에 맞춰 범위를 정합니다.')))
+ case_id={'md':'a','product':'c','hr':'b'}[rid]
+ title,body=out['slide-52']
+ out['slide-52']=(title,body+f'<p class="clean-note"><a href="cohort-cases.html#case-{case_id}">선택 / 이전 차수 익명 사례를 2분 읽고 내 세 줄을 3분 쓰기 →</a></p>')
  return {'week1_deck.html':out}
 
 
