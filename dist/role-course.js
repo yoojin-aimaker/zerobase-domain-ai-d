@@ -50,6 +50,11 @@
       const fixedRole = week1 ? {'slide-9':'md','slide-10':'product','slide-11':'hr'}[id] : null;
       const labelRole = fixedRole ? data.roles[fixedRole].name : week1 && ['slide-8','slide-12','slide-19','slide-60'].includes(id) ? 'D그룹 공통' : kit.name;
       if (label) label.textContent = (week1 ? 'WEEK 01' : nested ? 'WEEK 03' : 'WEEK 02') + ' / ' + labelRole + ' / 수업용 합성 자료';
+      if (week1) {
+        const index = Number(id.replace('slide-', '')) - 1;
+        const name = document.querySelectorAll('.slide-list .slide-link')[index]?.querySelector('.slide-name');
+        if (name) name.textContent = title;
+      }
       document.querySelectorAll('.slide-list a').forEach(link => {
         if (link.getAttribute('href') !== '#' + id) return;
         const number = link.querySelector('span')?.textContent || id.replace('slide-', '');
