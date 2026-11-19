@@ -107,9 +107,11 @@
     });
   }
   if (window.redesignLecture) window.redesignLecture();
+  if (weekNumber === 1) window.prepareDWeek1?.();
   const slides = [...document.querySelectorAll('.slide')];
+  const visibleSlides = slides.filter(slide => !slide.dataset.mergedInto);
   const stage = document.querySelector('.stage');
-  slides.forEach((slide, i) => { slide.dataset.slide = `${i + 1} / ${slides.length}`; slide.dataset.scroll = String(Boolean(document.body.dataset.workbook)); });
+  slides.forEach((slide, i) => { slide.dataset.slide = `${visibleSlides.indexOf(slide) + 1} / ${visibleSlides.length}`; slide.dataset.scroll = String(Boolean(document.body.dataset.workbook)); const footer=slide.querySelector('.ppt-slide-footer span:last-child'); if(footer)footer.textContent=slide.dataset.slide; });
   const list = document.querySelector('.slide-list');
   const prev = document.querySelector('#prev');
   const next = document.querySelector('#next');
@@ -140,10 +142,11 @@
       group.append(heading, chapterItems);
       list.append(group);
     }
-    if (!slide.dataset.outline) chapterItem++;
+    if (!slide.dataset.outline && !slide.dataset.mergedInto) chapterItem++;
     const outline = slide.dataset.outline || (weekNumber === 1 ? `${chapter}-${chapterItem}` : String(i + 1).padStart(2, '0'));
     const button = document.createElement('button');
     button.className = 'slide-link';
+    button.hidden = Boolean(slide.dataset.mergedInto);
     button.innerHTML = `<span class="slide-number">${outline}</span><span class="slide-name">${(weekNumber===1 && (window.WEEK1_NAV_LABELS?.[slide.dataset.title] || homeworkNames[slide.dataset.title])) || slide.dataset.title || slide.querySelector('h3,h2')?.textContent || ''}</span>`;
     button.onclick = () => show(i);
     chapterItems.append(button);
@@ -152,12 +155,13 @@
   let current = Math.max(0, Math.min(slides.length - 1, Number(location.hash.match(/slide-(\d+)/)?.[1] || 1) - 1));
   function show(index) {
     current = Math.max(0, Math.min(slides.length - 1, index));
+    if (slides[current].dataset.mergedInto) current = Number(slides[current].dataset.mergedInto) - 1;
     slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
     links.forEach((link, i) => { link.classList.toggle('active', i === current); link.setAttribute('aria-current', i === current ? 'page' : 'false'); });
     const activeChapter = links[current].closest('.toc-chapter');
     if (activeChapter) activeChapter.open = true;
     list.querySelectorAll('.toc-chapter').forEach(group => group.classList.toggle('has-current', group === activeChapter));
-    counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    counter.textContent = `${String(visibleSlides.indexOf(slides[current]) + 1).padStart(2, '0')} / ${String(visibleSlides.length).padStart(2, '0')}`;
     prev.disabled = current === 0; next.disabled = current === slides.length - 1;
     history.replaceState(null, '', `#slide-${current + 1}`);
     document.title = `${document.body.dataset.week || '강의'} ${current + 1} / ${slides[current].dataset.title || ''}`;
@@ -181,8 +185,9 @@
   document.fonts.ready.then(fitSlide);
   function move(direction) {
     let index=current+direction;
+    while(slides[index]?.dataset.mergedInto) index+=direction;
     if(slides[current].dataset.reference!=='true'){
-      while(slides[index]?.dataset.reference==='true')index+=direction;
+      while(slides[index] && (slides[index].dataset.reference==='true' || slides[index].dataset.mergedInto))index+=direction;
     }
     show(index);
   }

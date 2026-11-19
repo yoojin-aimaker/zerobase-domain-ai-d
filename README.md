@@ -16,3 +16,9 @@ python3 scripts/build-cohort-cases.py
 ```
 
 이전 차수 자료는 content/cohort-cases.json의 검토된 익명 발췌만 배포합니다. 실명과 원본 파일 경로가 있는 대조 기록은 이 저장소와 배포 폴더 밖에 둡니다.
+
+## 공개 범위
+
+배포 시 `python3 scripts/prepare-release.py`로 `.release`를 만듭니다. 2~4주차 강의와 해당 주차의 HTML 실습 페이지는 잠금 안내로 배포하며 원본은 dist에 보존합니다. 주차를 열 때는 이 스크립트와 홈 카드, 주차 메뉴를 함께 수정합니다.
+
+1주차 2-7과 2-8은 한 페이지로 합쳤습니다. 기존 22번 주소는 21번으로 연결되며 이후 실습과 숙제 주소는 유지합니다. JD 링크는 content/jd-references.json에 기록했습니다.

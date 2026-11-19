@@ -88,7 +88,7 @@
     if (active) {
       const counter = document.querySelector('#counter');
       const activeNumber = active.dataset.pageNumber || active.id.replace('slide-', '') || String([...document.querySelectorAll('article.slide')].indexOf(active) + 1);
-      if (counter) counter.textContent = activeNumber + ' / ' + (week1 ? '60' : nested ? '33' : '73') + ' ' + active.dataset.title;
+      if (counter) counter.textContent = (week1 ? active.dataset.slide : activeNumber + ' / ' + (nested ? '33' : '73')) + ' ' + active.dataset.title;
       if (week1) document.title = '1주차 ' + activeNumber + ' / ' + active.dataset.title + ' / YUJIN FLOW';
     }
   }

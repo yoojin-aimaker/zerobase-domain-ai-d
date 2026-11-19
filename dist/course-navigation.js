@@ -39,7 +39,7 @@
     const footer=node('div','course-menu-resources');
     [['index.html','전체 주차'],['syllabus.html','과정 안내'],['workbook.html','1주차 워크북'],['role-matching.html#survey','희망 직무별 참고'],['submission.html','숙제 제출 시트 ↗']].forEach(([href,label])=>{const a=anchor(href,label);if(href.startsWith('https:')){a.target='_blank';a.rel='noopener';}footer.append(a);});panel.append(footer);
   }
-  links.forEach((link,i)=>{const button=node('button','course-menu-trigger',link.textContent);button.type='button';button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',panel.id);link.replaceWith(button);
+  links.forEach((link,i)=>{if(i>0){const locked=node('button','course-menu-trigger',link.textContent+' 🔒');locked.type='button';locked.disabled=true;locked.title='추후 오픈';link.replaceWith(locked);return;}const button=node('button','course-menu-trigger',link.textContent);button.type='button';button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',panel.id);link.replaceWith(button);
     let hoverOpened=false;
     button.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){if(i===3)hoverOpened=true;open(button,i+1,link.getAttribute('href'));}});
     button.onclick=()=>{if(i===3&&hoverOpened&&current===button&&!panel.hidden){hoverOpened=false;return;}hoverOpened=false;if(current===button&&!panel.hidden)close();else open(button,i+1,link.getAttribute('href'));};

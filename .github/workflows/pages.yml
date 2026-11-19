@@ -18,10 +18,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - run: python3 scripts/prepare-release.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .release
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

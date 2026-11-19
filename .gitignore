@@ -2,3 +2,5 @@
 .DS_Store
 .openai/*.tar*
 __pycache__/
+
+.release/
