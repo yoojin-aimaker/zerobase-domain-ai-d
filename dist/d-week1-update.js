@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded',()=>{
  const existing=[...bar.querySelectorAll('button')];
  const pick=t=>existing.find(b=>b.textContent.includes(t));
  const toc=pick('목차'),fs=pick('전체 화면'),role=pick('직무 예시');
- const download=document.createElement('button');download.textContent='MD 다운로드';download.onclick=()=>{const id=new URLSearchParams(location.search).get('role')||'md';location.href='week1-lab.html?role='+id+'#'+id;};
+ const download=document.createElement('button');download.type='button';download.textContent='MD 다운로드';download.title='1주차 공통 과제 코치 MD 다운로드';download.onclick=()=>{
+  const link=document.createElement('a');
+  link.href='downloads/week1-homework-coach.md';
+  link.download='1주차_과제코치.md';
+  document.body.append(link);link.click();link.remove();
+ };
  const more=document.createElement('details');more.className='d-toolbar-more';
  const summary=document.createElement('summary');summary.textContent='더보기';more.append(summary);
  const menu=document.createElement('div');menu.className='d-toolbar-menu';
