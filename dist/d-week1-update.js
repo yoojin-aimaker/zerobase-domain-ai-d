@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const summary=document.createElement('summary');summary.textContent='더보기';more.append(summary);
  const menu=document.createElement('div');menu.className='d-toolbar-menu';
  existing.filter(b=>![toc,fs,role].includes(b)).forEach(b=>menu.append(b));more.append(menu);
- bar.replaceChildren(...[toc,role,download,fs,more].filter(Boolean));
+ bar.replaceChildren(...[toc,download,fs,more].filter(Boolean));
  document.addEventListener('click',e=>{if(!more.contains(e.target))more.open=false;});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){more.open=false;summary.focus();}});
 });
