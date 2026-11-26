@@ -60,8 +60,12 @@
         const number = link.querySelector('span')?.textContent || id.replace('slide-', '');
         link.replaceChildren();
         const tag = document.createElement('span');
+        tag.className = 'slide-number';
         tag.textContent = number;
-        link.append(tag, document.createTextNode(' ' + title));
+        const name = document.createElement('span');
+        name.className = 'slide-name';
+        name.textContent = title;
+        link.append(tag, name);
       });
     }
     // Keep the original copy actions in unchanged slides consistent with this role.
