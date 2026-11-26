@@ -1,4 +1,4 @@
-PRD.md, WORKFLOW.html, CLAUDE.md와 앞에서 확정한 Sub Agent 구성표를 읽어줘.
+02_명세서.md, WORKFLOW.md, CLAUDE.md와 앞에서 확정한 Sub Agent 구성표를 읽어줘.
 구성표가 없으면 역할을 임의로 추가하지 말고 확인할 질문을 먼저 보여줘.
 이미 만든 첫 번째 Sub Agent는 그대로 두고, 아직 없는 나머지 역할만 프로젝트의 .claude/agents/에 각각 Markdown 파일로 만들어줘.
 각 파일에 YAML frontmatter의 name과 description을 넣고, 필요한 도구를 역할에 맞게 지정해줘.

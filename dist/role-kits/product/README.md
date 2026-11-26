@@ -3,7 +3,7 @@
 주제: 사용 불편에서 생활가전 설계 대안 고르기
 모든 입력은 수업용 합성 자료입니다. 참고 결과는 사람이 작성한 구성 예시이며 AI의 실제 실행 로그가 아닙니다.
 
-1. input.md와 PRD.md, WORKFLOW.md, GUIDELINES.md를 읽습니다.
+1. input.md와 02_명세서.md, WORKFLOW.md, GUIDELINES.md를 읽습니다.
 2. prompt.md를 사용해 AI에 첫 작업을 맡깁니다. ChatGPT, Claude, Gemini 등 파일 또는 텍스트를 읽을 수 있는 채팅에서 진행할 수 있습니다. 도구별 기능을 확인합니다.
 3. reference-output.md와 expected.md는 처음 실행에 첨부하지 않습니다. 독립 실행 뒤 사람의 검수에 사용합니다.
 4. 실제 응답과 원문을 대조해 validation.md를 채웁니다.
@@ -18,7 +18,3 @@
 3주차: 직무 결과물 초안, 실제 실행 기록과 검증표 4건, 실패 또는 한계 2건, 수정 전후. 발표 구성 초안을 함께 준비합니다.
 
 4주차: 최종 포트폴리오 1건을 PDF, PPT 또는 HTML 중 하나로 제출합니다. 5분 발표와 면접 90초 답변을 준비합니다. 라이브 데모는 선택입니다.
-
-## 1주차에서 이어 오기
-
-week1-coach.md와 week1-template.md로 같은 프로젝트를 시작합니다. week1-handoff.md에 회차별 인계와 파일명 기준이 있습니다. 2주차 설계에는 PRD를 포함합니다.
