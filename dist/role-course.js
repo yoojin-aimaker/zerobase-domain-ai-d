@@ -69,9 +69,7 @@
       Object.assign(assets, {
         'PoC_Agent_파일생성.md': files['prompt.md'],
         'PoC_Agent_첫시험.md': files['prompt.md'],
-        '워크플로우_첫실행.md': files['prompt.md'],
-        '워크플로우_Agent추천.md': '내 업무에서 AI에 맡길 역할 하나와 입력, 출력, 보류 조건을 정리해줘. 여러 Agent는 선택이며 웹 채팅으로 충분하면 그 방법을 제안해줘.',
-        'CLAUDE_지침서_생성.md': files['GUIDELINES.md'],
+        '워크플로우_Agent추천.md': '내 지침서와 PRD, WORKFLOW, 실제 응답과 내 검수 기록을 읽고 필요한 역할 후보를 제안해줘. 실행 기록이 없으면 확인 질문부터 남겨줘. 실제 근거, 입력, 역할 하나, 결과, 다음 담당과 보류 조건을 적고 내가 고르기 전 파일은 만들지 마. 여러 Agent는 선택이며 사람이나 메인 AI의 조율로 충분하면 그 방법을 제안해줘.',
       });
     }
     if (!week1 && typeof prompts !== 'undefined') prompts.delegate = files['prompt.md'];
