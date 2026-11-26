@@ -64,9 +64,19 @@
         tag.textContent = number;
         const name = document.createElement('span');
         name.className = 'slide-name';
-        name.textContent = title;
+        name.textContent = (!week1 && !nested && ['slide-28', 'slide-29', 'slide-48'].includes(id) ? '선택 / ' : '') + title;
         link.append(tag, name);
       });
+    }
+    if (!week1 && !nested) {
+      const guides = {'slide-5':'goal','slide-21':'prd','slide-25':'workflow','slide-40':'instruction','slide-47':'expected'};
+      for (const [id, section] of Object.entries(guides)) {
+        const heading = document.getElementById(id)?.querySelector('.ppt-heading');
+        if (!heading) continue;
+        let link = heading.querySelector('[data-howto]');
+        if (!link) { link = document.createElement('a'); link.className = 'heading-link'; link.dataset.howto = section; link.target = '_blank'; link.rel = 'noopener'; link.textContent = '①~④ 실제 화면으로 따라하기 ↗'; heading.append(link); }
+        link.href = 'week2-howto.html?role=' + role + '#' + section;
+      }
     }
     // Keep the original copy actions in unchanged slides consistent with this role.
     if (!week1 && typeof assets !== 'undefined') {
